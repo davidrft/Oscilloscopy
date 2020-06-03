@@ -7,9 +7,9 @@ class Infiniivision:
         """Initializes a Keysight InfiniiVision oscilloscpe.
 
         Args:
-        pos -- position of device in devices list (provided by list_devices() from PyOscilloscope) (default 0)
+        pos -- position of device in devices list (provided by list_devices() from OscilloscoPy) (default 0)
         """
-        self.inst = op.instrument(pos)
+        self.inst = op.get_instrument(pos)
         self.gen = op.Generator(self.inst)
         self.chan = op.Channels(self.inst)
         self.osc = op.Oscilloscope(self.inst)
