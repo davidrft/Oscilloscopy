@@ -1,4 +1,4 @@
-import pyoscilloscope as posc
+import oscilloscopy as op
 import usbtmc
 
 
@@ -9,10 +9,10 @@ class Infiniivision:
         Args:
         pos -- position of device in devices list (provided by list_devices() from PyOscilloscope) (default 0)
         """
-        self.inst = posc.instrument(pos)
-        self.gen = posc.Generator(self.inst)
-        self.chan = posc.Channels(self.inst)
-        self.osc = posc.Oscilloscope(self.inst)
+        self.inst = op.instrument(pos)
+        self.gen = op.Generator(self.inst)
+        self.chan = op.Channels(self.inst)
+        self.osc = op.Oscilloscope(self.inst)
 
     def show_img(self, channel=1):
         """Prints acquired waveform from selected channel on PC.
